@@ -1,0 +1,21 @@
+<!--pages/bind/bind.wxml-->
+<van-cell-group>
+  <van-field
+    value="{{ username }}"
+    required
+    clearable
+    label="手机号码"
+    placeholder="输入手机号码"
+    bind:click-icon="onClickIcon"
+  />
+
+  <van-field
+    value="{{ password }}"
+    type="password"
+    label="验证码"
+    placeholder="输入验证码"
+    required
+    border="{{ false }}"
+  />
+</van-cell-group>
+<van-button size="large" type="primary">立即绑定</van-button>

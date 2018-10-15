@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText":"绑定账号",
+  "usingComponents": {
+    "van-field": "/assets/libs/vant-weapp/field/index",
+    "van-button": "/assets/libs/vant-weapp/button/index"
+  }
+}

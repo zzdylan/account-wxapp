@@ -1,0 +1,53 @@
+<!--pages/detail/index.wxml-->
+<view class="info">
+  <van-row>
+    <van-col span="8" custom-class="date center">
+      <picker mode="date" value="{{date}}" start="" end="" fields="month" bindchange="bindDateChange">
+            <view>
+              {{year}}年{{month}}月
+            </view>
+      </picker>
+    </van-col>
+    <van-col span="8" custom-class="income center">
+      <view class="center" style="flex-direction:column">
+        <view>收入</view>
+        <view>{{income}}</view>
+      </view>
+    </van-col>
+    <van-col span="8" custom-class="expend center">
+      <view class="center" style="flex-direction:column">
+        <view>支出</view>
+        <view>{{expend}}</view>
+      </view>
+    </van-col>
+  </van-row>
+</view>
+
+
+<view class="detail">
+  <view class="time-count">
+    <view>10月15日 星期一</view>
+    <view>支出:100</view>
+  </view>
+  <van-cell-group>
+    <van-cell title="餐饮" value="-20" />
+    <van-cell title="餐饮" value="-20" />
+    <van-cell title="餐饮" value="-20" />
+    <van-cell title="餐饮" value="-20" />
+    <van-cell title="餐饮" value="-20" />
+  </van-cell-group>
+</view>
+<view class="detail">
+  <view class="time-count">
+    <view>10月15日 星期一</view>
+    <view>支出:100</view>
+  </view>
+  <van-cell-group>
+    <van-cell title="餐饮" value="-20" />
+    <van-cell title="餐饮" value="-20" />
+    <van-cell title="餐饮" value="-20" />
+    <van-cell title="餐饮" value="-20" />
+    <van-cell title="餐饮" value="-20" />
+  </van-cell-group>
+</view>
+

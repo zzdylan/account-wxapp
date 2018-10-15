@@ -1,0 +1,22 @@
+<!--pages/me/me.wxml-->
+<!-- <open-data type="userAvatarUrl"></open-data>
+<open-data type="userNickName"></open-data>
+<button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+<button bindtap="bindUser">绑定账号</button> -->
+<view class="user-info">
+  <view class="avatar-view">
+    <image class="avatar" src="http://img.zcool.cn/community/0117e2571b8b246ac72538120dd8a4.jpg@1280w_1l_2o_100sh.jpg"></image>
+    nic
+  </view>
+</view>
+<view>
+  <van-cell-group>
+    <van-cell
+      title="绑定账号"
+      is-link
+      arrow-direction="down"
+      border="{{ false }}"
+      url="/pages/bind/index"
+    />
+  </van-cell-group>
+</view>

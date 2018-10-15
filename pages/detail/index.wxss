@@ -1,0 +1,34 @@
+/* pages/detail/index.wxss */
+.center{
+  display:flex;
+  align-items: center;/*垂直居中*/
+  justify-content: center;/*水平居中*/
+}
+.green{
+  background-color: green
+}
+.info{
+  background-color: yellow;
+  height: 150rpx
+}
+.date{
+  height: 150rpx;
+  /* background-color: red; */
+}
+.income{
+  height: 150rpx;
+  /* background-color: rgb(255, 0, 242); */
+}
+.expend{
+  height: 150rpx;
+  /* background-color: rgb(255, 136, 0); */
+}
+.time-count{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  margin:20rpx;
+}
+.detail{
+  margin-bottom:50rpx
+}
