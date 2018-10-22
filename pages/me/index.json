@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "van-cell": "/assets/libs/vant-weapp/cell/index",
-    "van-cell-group": "/assets/libs/vant-weapp/cell-group/index"
+    "van-cell-group": "/assets/libs/vant-weapp/cell-group/index",
+    "van-tag": "/assets/libs/vant-weapp/tag/index"
   }
 }

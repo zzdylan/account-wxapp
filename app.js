@@ -5,7 +5,9 @@ App({
   onLaunch: function () {
     var that = this;
     //如果需要一进入小程序就要求授权登录,可在这里发起调用
-      //that.check(function (ret) { });
+      // that.check(function (ret) { 
+      //   console.log(ret);
+      // });
   },
   //判断是否登录
   check: function (cb) {
@@ -31,16 +33,16 @@ App({
           // }, function (data, ret) {
           //   that.error(ret.msg);
           // });
-          // wx.getUserInfo({
-          //   success: function (ures) {
-          //     console.log(ures);
-          //     that.globalData.userInfo = ures.userInfo;
-          //     typeof cb == "function" && cb(that.globalData.userInfo);
-          //   },
-          //   fail: function (res) {
-          //     that.showLoginModal(cb);
-          //   }
-          // });
+          wx.getUserInfo({
+            success: function (ures) {
+              console.log(ures);
+              that.globalData.userInfo = ures.userInfo;
+              typeof cb == "function" && cb(that.globalData.userInfo);
+            },
+            fail: function (res) {
+              that.showLoginModal(cb);
+            }
+          });
         } else {
           that.showLoginModal(cb);
         }

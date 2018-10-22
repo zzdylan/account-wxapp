@@ -1,0 +1,8 @@
+<!--pages/chart/index.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="周">
+    <canvas class="canvas" canvas-id="lineCanvas"></canvas>
+  </van-tab>
+  <van-tab title="月">内容 2</van-tab>
+  <van-tab title="年">内容 3</van-tab>
+</van-tabs>

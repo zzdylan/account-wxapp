@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/detail/index",
+    "pages/chart/index",
     "pages/bind/index",
     "pages/me/index",
     "pages/index/index",
@@ -17,6 +18,10 @@
       {
         "pagePath": "pages/detail/index",
         "text": "账单明细"
+      },
+      {
+        "pagePath": "pages/chart/index",
+        "text": "图表"
       },
       {
         "pagePath": "pages/me/index",

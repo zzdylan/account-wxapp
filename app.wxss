@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import "/assets/libs/vant-weapp/common/index.wxss";
 .container {
   height: 100%;
   display: flex;

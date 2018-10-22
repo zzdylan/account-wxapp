@@ -1,21 +1,34 @@
 <!--pages/bind/bind.wxml-->
-<van-cell-group>
+<form bindsubmit="submitForm">
+  <van-cell-group>
+    <van-field
+      name="mobile"
+      value="{{mobile}}"
+      required
+      clearable
+      label="手机号码"
+      placeholder="输入手机号码"
+      bind:click-icon="onClickIcon"
+      bind:change="mobileInput"
+    />
+  </van-cell-group>
+  <van-cell-group>
   <van-field
-    value="{{ username }}"
-    required
+    name="code"
+    value="{{ code }}"
+    center
     clearable
-    label="手机号码"
-    placeholder="输入手机号码"
-    bind:click-icon="onClickIcon"
-  />
-
-  <van-field
-    value="{{ password }}"
-    type="password"
-    label="验证码"
-    placeholder="输入验证码"
     required
+    label="短信验证码"
+    placeholder="请输入短信验证码"
     border="{{ false }}"
-  />
+    use-button-slot
+    bind:input="codeInput"
+  >
+    <van-button disabled="{{sendDisabled}}" slot="button" bind:click="sendCode" size="small" type="primary">{{sendButton}}</van-button>
+  </van-field>
 </van-cell-group>
-<van-button size="large" type="primary">立即绑定</van-button>
+  <van-button bind:click="submit" type="primary" size="large">立即绑定</van-button>
+  <!-- <button type="primary" formType="submit">立即绑定</button> -->
+  <van-toast id="van-toast" />
+</form>
