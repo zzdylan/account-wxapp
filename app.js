@@ -112,7 +112,8 @@ App({
       data: data,
       method: 'post',
       header: {
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": wx.getStorageSync('token')
       },
       success: function (res) {
         that.loading(false);
@@ -124,7 +125,9 @@ App({
           } else {
             typeof error === 'function' && error(json.data, json);
           }
-        } else {
+        } else if (res.statusCode === 401){
+          that.info('请先登录');
+        }else {
           json = typeof res.data === 'object' ? res.data : { code: 0, msg: '发生一个未知错误', data: null };
           typeof error === 'function' && error(json.data, json);
         }

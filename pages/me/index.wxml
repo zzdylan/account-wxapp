@@ -10,7 +10,13 @@
   <van-cell-group>
     <van-cell is-link bind:click="bindAccount">
       <view slot="title">
-        <span class="van-cell-text">绑定账号</span>
+        <span class="van-cell-text">绑定手机号</span>
+        <!-- <van-tag type="danger">{{bindTag}}</van-tag> -->
+      </view>
+    </van-cell>
+    <van-cell is-link url="/pages/category/index">
+      <view slot="title">
+        <span class="van-cell-text">类别设置</span>
         <!-- <van-tag type="danger">{{bindTag}}</van-tag> -->
       </view>
     </van-cell>

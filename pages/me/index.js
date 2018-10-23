@@ -48,7 +48,13 @@ Page({
         app.request('/user/login', {
           code: loginRes.code
         }, function(data, ret) {
-          app.info(ret.msg);
+          wx.setStorage({
+            key: "token",
+            data: data.token,
+            success:function(){
+              app.success('登录成功');
+            }
+          })
         }, function(data, ret) {
           app.info(ret.msg);
         });

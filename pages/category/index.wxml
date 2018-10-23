@@ -1,0 +1,13 @@
+<!--pages/category/index.wxml-->
+<van-tabs bind:click="tabSelected" active="{{ active }}" bind:change="onChange">
+  <van-tab title="支出">
+    <van-cell-group wx:for="{{expendCategories}}" wx:key="key" wx:for-index="idx" wx:for-item="expendCategory">
+      <van-cell title="{{expendCategory.name}}" />
+    </van-cell-group>
+  </van-tab>
+  <van-tab title="收入">
+    <van-cell-group wx:for="{{incomeCategories}}" wx:key="key" wx:for-index="idx" wx:for-item="incomeCategory">
+      <van-cell title="{{incomeCategory.name}}" />
+    </van-cell-group>
+  </van-tab>
+</van-tabs>
