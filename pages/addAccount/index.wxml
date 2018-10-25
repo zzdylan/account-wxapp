@@ -1,0 +1,37 @@
+<!--pages/addAccount/index.wxml-->
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="section">
+    <view class="section__title">金额</view>
+    <input name="money" type="digit" placeholder="金额"/>
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">类型</view>
+    <radio-group bindchange="radioChecked" name="categoryType">
+      <label><radio checked value="1"/>支出</label>
+      <label><radio value="2"/>收入</label>
+    </radio-group>
+  </view>
+  <view>
+    <picker name="date" mode="date" value="{{date}}" bindchange="bindDateChange">
+      <view class="picker">
+        选择日期: {{date}}
+      </view>
+    </picker>
+  </view>
+  <view>
+    <picker name="categoryIndex" bindchange="bindCategoryChange" value="{{categoryIndex}}" range="{{categories}}" range-key="name">
+    <view class="picker">
+      选择类型{{categories[categoryIndex].name}}
+    </view>
+  </picker>
+  </view>
+  <view class="section">
+    <view class="section__title">备注</view>
+    <input name="remark" placeholder="备注" />
+  </view>
+  <view class="btn-area">
+    <button formType="submit">提交</button>
+    <!-- <button formType="reset">重置</button> -->
+  </view>
+</form>

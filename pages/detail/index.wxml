@@ -23,31 +23,17 @@
   </van-row>
 </view>
 
-
-<view class="detail">
-  <view class="time-count">
-    <view>10月15日 星期一</view>
-    <view>支出:100</view>
-  </view>
-  <van-cell-group>
-    <van-cell title="餐饮" value="-20" />
-    <van-cell title="餐饮" value="-20" />
-    <van-cell title="餐饮" value="-20" />
-    <van-cell title="餐饮" value="-20" />
-    <van-cell title="餐饮" value="-20" />
-  </van-cell-group>
+<view>
+  <van-button bind:click="addAccount" size="large" plain type="primary">新增</van-button>
 </view>
-<view class="detail">
+
+<view class="detail" wx:for="{{accountData}}" wx:for-index="idx" wx:for-item="item" wx:key="key">
   <view class="time-count">
-    <view>10月15日 星期一</view>
-    <view>支出:100</view>
+    <view>{{item.date}} {{item.week}}</view>
+    <view>收入:{{item.dayIncome}} 支出:{{item.dayExpend}}</view>
   </view>
-  <van-cell-group>
-    <van-cell title="餐饮" value="-20" />
-    <van-cell title="餐饮" value="-20" />
-    <van-cell title="餐饮" value="-20" />
-    <van-cell title="餐饮" value="-20" />
-    <van-cell title="餐饮" value="-20" />
+  <van-cell-group wx:for="{{item.account}}" wx:for-item="account">
+    <van-cell title="{{account.category_name}}" value="{{account.value}}" />
   </van-cell-group>
 </view>
 

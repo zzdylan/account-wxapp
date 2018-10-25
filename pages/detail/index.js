@@ -1,4 +1,5 @@
 // pages/detail/index.js
+const app = getApp();
 Page({
 
   /**
@@ -8,8 +9,9 @@ Page({
     date:"",
     year:"",
     month:"",
-    income:100,
-    expend:100
+    income:0,
+    expend:0,
+    accountData:[]
   },
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -24,18 +26,35 @@ Page({
       month: date.getMonth()+1
     })
   },
+  addAccount:function(){
+    wx.navigateTo({
+      url: '/pages/addAccount/index'
+    })
+  },
+  queryAccount:function(){
+    const that = this;
+    app.request('/account/index', {}, function (data, ret) {
+      that.setData({
+        income: data.income,
+        expend: data.expend,
+        accountData:data.data
+      });
+    }, function (data, ret) { });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var nowDate = new Date();
-    var nowYear = nowDate.getFullYear();
-    var nowMonth = nowDate.getMonth();
-    this.setData({
+    const that = this;
+    const nowDate = new Date();
+    const nowYear = nowDate.getFullYear();
+    const nowMonth = nowDate.getMonth();
+    that.setData({
       year: nowYear,
       month:nowMonth+1,
       date: nowYear+"-"+nowMonth
-    })
+    });
+    this.queryAccount();
   },
 
   /**

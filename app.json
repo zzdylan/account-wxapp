@@ -6,7 +6,8 @@
     "pages/me/index",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/category/index"
+    "pages/category/index",
+    "pages/addAccount/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

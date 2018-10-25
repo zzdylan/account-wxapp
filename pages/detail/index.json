@@ -3,6 +3,7 @@
     "van-cell": "/assets/libs/vant-weapp/cell/index",
     "van-cell-group": "/assets/libs/vant-weapp/cell-group/index",
     "van-row": "/assets/libs/vant-weapp/row/index",
-    "van-col": "/assets/libs/vant-weapp/col/index"
+    "van-col": "/assets/libs/vant-weapp/col/index",
+    "van-button": "/assets/libs/vant-weapp/button/index"
   }
 }
