@@ -1,5 +1,5 @@
 App({
-  apiUrl: 'http://fastadmin.51godream.com/addons/account/wxapp.',
+  apiUrl: 'https://fastadmin.51godream.com/addons/account/wxapp.',
   si: 0,
   //小程序启动
   onLaunch: function () {
@@ -126,7 +126,15 @@ App({
             typeof error === 'function' && error(json.data, json);
           }
         } else if (res.statusCode === 401){
-          that.info('请先登录');
+          that.info('未登录或者状态已过期，请重新登录');
+          wx.switchTab({
+            url: '/pages/me/index',
+            success: function (e) {
+              var page = getCurrentPages().pop();
+              if (page == undefined || page == null) return;
+              page.onLoad();
+            }
+          })
         }else {
           json = typeof res.data === 'object' ? res.data : { code: 0, msg: '发生一个未知错误', data: null };
           typeof error === 'function' && error(json.data, json);

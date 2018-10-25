@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "账单明细",
   "usingComponents": {
     "van-cell": "/assets/libs/vant-weapp/cell/index",
     "van-cell-group": "/assets/libs/vant-weapp/cell-group/index",

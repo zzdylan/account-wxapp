@@ -19,7 +19,14 @@ Page({
     //     console.log(res);
     //   }
     // });
+    const that = this;
+    app.request('/user/userInfo',{},function(data,ret){
+      that.setData({
+        userInfo:data
+      });
+    },function(data,ret){
 
+    });
     //app.login()
     // 查看是否授权
     // wx.getSetting({

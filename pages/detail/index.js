@@ -68,7 +68,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    const that = this;
+    const nowDate = new Date();
+    const nowYear = nowDate.getFullYear();
+    const nowMonth = nowDate.getMonth();
+    that.setData({
+      year: nowYear,
+      month: nowMonth + 1,
+      date: nowYear + "-" + nowMonth
+    });
+    this.queryAccount();
   },
 
   /**
