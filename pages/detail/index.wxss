@@ -4,12 +4,10 @@
   align-items: center;/*垂直居中*/
   justify-content: center;/*水平居中*/
 }
-.green{
-  background-color: green
-}
 .info{
-  background-color: yellow;
-  height: 150rpx
+  background-color: #9FEE00;
+  height: 150rpx;
+  border-radius: 15rpx
 }
 .date{
   height: 150rpx;
@@ -30,5 +28,11 @@
   margin:20rpx;
 }
 .detail{
-  margin-bottom:50rpx
+  margin-bottom:100rpx;
+  background-color: #C9F76F;
+}
+.footer{
+  position:fixed;
+  bottom:0; 
+  width:100%
 }

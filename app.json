@@ -4,8 +4,6 @@
     "pages/chart/index",
     "pages/bind/index",
     "pages/me/index",
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/category/index",
     "pages/addAccount/index"
   ],

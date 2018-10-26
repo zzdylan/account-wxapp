@@ -12,7 +12,11 @@ Page({
     incomeCategories: [],
     categoryIndex:0,
     categories:[],
-    date:''
+    date:'',
+    radioItems:[
+      {name:'支出',value:1,checked:true},
+      {name:'收入',value:2}
+    ]
   },
   initValidate:function(){
     // 验证字段的规则
@@ -69,9 +73,14 @@ Page({
     })
     this.requestCategory();
   },
-  radioChecked(event) {
-    const categoryType = event.detail.value;
+  radioChecked(e) {
+    var radioItems = this.data.radioItems;
+    var categoryType = e.detail.value;
+    for (var i = 0, len = radioItems.length; i < len; ++i) {
+      radioItems[i].checked = radioItems[i].value == e.detail.value;
+    }
     this.setData({
+      radioItems: radioItems,
       categoryType: categoryType
     });
     this.requestCategory();
@@ -103,13 +112,11 @@ Page({
     const json = event.detail.value;
     // 传入表单数据，调用验证方法
     if (!this.WxValidate.checkForm(json)) {
-      console.log(this.WxValidate.errorList);
       const error = this.WxValidate.errorList[0];
       app.info(error.msg);
       return false;
     }
     json.categoryId = this.data.categories[json.categoryIndex].id;
-    console.log(json);
     app.request('/account/save',json,function(data,ret){
       wx.switchTab({
         url: '/pages/detail/index',
